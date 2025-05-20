@@ -534,7 +534,7 @@ body.options-menu-open::after {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 40%
+    width: 25%
 }
 
 .media-container {
