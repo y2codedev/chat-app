@@ -492,6 +492,7 @@ body.options-menu-open::after {
     .sidebar.show {
         transform: translateX(0);
     }
+
     .chat-area {
         display: none;
     }
@@ -569,4 +570,24 @@ body.options-menu-open::after {
     height: auto;
     display: block;
     border-radius: 10px;
+}
+
+.message.outgoing .message-content .message-text {
+    color: white;
+    border-radius: 10px;
+    word-break: break-word;
+}
+
+.message.outgoing .message-time {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.message.incoming .message-time {
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.message.incoming .message-content .message-text {
+    color: #333333;
+    border-radius: 10px;
+    word-break: break-word;
 }

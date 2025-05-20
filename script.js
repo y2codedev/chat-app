@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             messageDiv.innerHTML = `
                 <div class="message-content">
                     <div class="message-text">${messageText}</div>
-                    <div class="message-time">${getCurrentTime()} <i class="fas fa-check-double"></i></div>
+                    <div class="message-time">${getCurrentTime()}</div>
                 </div>
             `;
             messages.appendChild(messageDiv);
