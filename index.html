@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp-like Chat</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class=" m-0 chat-app">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1 class="app-title">Chats</h1>
+                    <button class="back-button d-lg-none" onclick="goBackToUserList()">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="user-item-header ">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="User" class="rounded-circle">
+                            <span class="online-status"></span>
+                        </div>
+                        <div class="user-info">
+                            <h5 class="user-name">John Doe</h5>
+                            <p class="last-message">Online</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class=" more-options-btn">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                    <div class="options-menu">
+                        <button class="option-item">
+                            <i class="fas fa-search me-2"></i> Search
+                        </button>
+                        <button class="option-item">
+                            <i class="fas fa-users me-2"></i> New group
+                        </button>
+                        <button class="option-item">
+                            <i class="fas fa-bell me-2"></i> Mute notifications
+                        </button>
+                        <button class="option-item">
+                            <i class="fas fa-trash me-2"></i> Clear chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="app-content ">
+            <!-- Sidebar - User List -->
+            <aside class="sidebar">
+                <div class="user-list">
+                    <!-- Active User -->
+                    <div class="user-item active">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="User" class="rounded-circle">
+                            <span class="online-status"></span>
+                        </div>
+                        <div class="user-info">
+                            <h5 class="user-name">John Doe</h5>
+                            <p class="last-message">Hey, how are you?</p>
+                        </div>
+                        <div class="message-time">10:30 AM</div>
+                    </div>
+
+                    <!-- Other Users -->
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="User" class="rounded-circle">
+                            <span class="online-status"></span>
+                        </div>
+                        <div class="user-info">
+                            <h5 class="user-name">Jane Smith</h5>
+                            <p class="last-message">Meeting at 3pm</p>
+                        </div>
+                        <div class="message-time">Yesterday</div>
+                    </div>
+
+                    <!-- More users would go here -->
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="User" class="rounded-circle">
+                            <span class="online-status offline"></span>
+                        </div>
+                        <div class="user-info">
+                            <h5 class="user-name">Work Group</h5>
+                            <p class="last-message">Alice: The project is due...</p>
+                        </div>
+                        <div class="message-time">Monday</div>
+                    </div>
+
+                    <!-- Other Users -->
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="User" class="rounded-circle">
+                            <span class="online-status"></span>
+                        </div>
+                        <div class="user-info">
+                            <h5 class="user-name">Jane Smith</h5>
+                            <p class="last-message">Meeting at 3pm</p>
+                        </div>
+                        <div class="message-time">Yesterday</div>
+                    </div>
+
+                    <!-- More users would go here -->
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="User" class="rounded-circle">
+                            <span class="online-status offline"></span>
+                        </div>
+                        <div class="user-info">
+                            <h5 class="user-name">Work Group</h5>
+                            <p class="last-message">Alice: The project is due...</p>
+                        </div>
+                        <div class="message-time">Monday</div>
+                    </div>
+
+                    <!-- Other Users -->
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="User" class="rounded-circle">
+                            <span class="online-status"></span>
+                        </div>
+                        <div class="user-info">
+                            <h5 class="user-name">Jane Smith</h5>
+                            <p class="last-message">Meeting at 3pm</p>
+                        </div>
+                        <div class="message-time">Yesterday</div>
+                    </div>
+
+                    <!-- More users would go here -->
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="User" class="rounded-circle">
+                            <span class="online-status offline"></span>
+                        </div>
+                        <div class="user-info">
+                            <h5 class="user-name">Work Group</h5>
+                            <p class="last-message">Alice: The project is due...</p>
+                        </div>
+                        <div class="message-time">Monday</div>
+                    </div>
+
+                    <!-- Other Users -->
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="User" class="rounded-circle">
+                            <span class="online-status"></span>
+                        </div>
+                        <div class="user-info">
+                            <h5 class="user-name">Jane Smith</h5>
+                            <p class="last-message">Meeting at 3pm</p>
+                        </div>
+                        <div class="message-time">Yesterday</div>
+                    </div>
+
+                    <!-- More users would go here -->
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="User" class="rounded-circle">
+                            <span class="online-status offline"></span>
+                        </div>
+                        <div class="user-info">
+                            <h5 class="user-name">Work Group</h5>
+                            <p class="last-message">Alice: The project is due...</p>
+                        </div>
+                        <div class="message-time">Monday</div>
+                    </div>
+
+                    <!-- Other Users -->
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="User" class="rounded-circle">
+                            <span class="online-status"></span>
+                        </div>
+                        <div class="user-info">
+                            <h5 class="user-name">Jane Smith</h5>
+                            <p class="last-message">Meeting at 3pm</p>
+                        </div>
+                        <div class="message-time">Yesterday</div>
+                    </div>
+
+                    <!-- More users would go here -->
+                    <div class="user-item">
+                        <div class="user-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                alt="User" class="rounded-circle">
+                            <span class="online-status offline"></span>
+                        </div>
+                        <div class="user-info">
+                            <h5 class="user-name">Work Group</h5>
+                            <p class="last-message">Alice: The project is due...</p>
+                        </div>
+                        <div class="message-time">Monday</div>
+                    </div>
+
+                </div>
+            </aside>
+
+            <!-- Main Chat Area -->
+            <main class="chat-area">
+                <!-- Messages Container -->
+                <div class="messages-container">
+                    <div class="messages">
+                        <!-- Incoming Message -->
+                        <div class="message incoming">
+                            <div class="message-content">
+                                <div class="message-text">Hey there! How are you doing?</div>
+                                <div class="message-time">10:30 AM</div>
+                            </div>
+                        </div>
+
+                        <!-- Outgoing Message -->
+                        <div class="message outgoing">
+                            <div class="message-content">
+                                <div class="message-text text-white">I'm good, thanks! Working on some projects.</div>
+                            </div>
+                        </div>
+
+                        <!-- Incoming Message -->
+                        <div class="message incoming">
+                            <div class="message-content">
+                                <div class="message-text">Are we still meeting for lunch tomorrow?</div>
+                                <div class="message-time">10:33 AM</div>
+                            </div>
+                        </div>
+
+                        <!-- Outgoing Message -->
+                        <div class="message outgoing">
+                            <div class="message-content">
+                                <div class="message-text text-white">Absolutely! 12:30 at our usual spot?</div>
+                            </div>
+                        </div>
+
+                        <div class="media-container">
+                            <div class="media-incoming">
+                                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                                    alt="Incoming Media">
+                            </div>
+                            <div class="media-outgoing">
+                                <img src="https://media.istockphoto.com/id/1293903541/photo/young-woman-stock-photo.jpg?s=612x612&w=0&k=20&c=AvQGpGDrH-0nUNAL-uHuc1uidcTiiLbovyKJjsN_mOk="
+                                    alt="Outgoing Media">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Message Input -->
+                <div class="message-input">
+                    <!-- Plus button for attachments -->
+                    <div class="attachment-container">
+                        <button class="attachment-btn">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="attachment-options">
+                            <button class="option-btn">
+                                <i class="fas fa-image"></i>
+                                <span>Photo</span>
+                            </button>
+                            <button class="option-btn">
+                                <i class="fas fa-video"></i>
+                                <span>Video</span>
+                            </button>
+                            <button class="option-btn">
+                                <i class="fas fa-file"></i>
+                                <span>Document</span>
+                            </button>
+                            <button class="option-btn">
+                                <i class="fas fa-microphone"></i>
+                                <span>Audio</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="text" placeholder="Type a message...">
+                        <button class="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
